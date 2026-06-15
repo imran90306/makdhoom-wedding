@@ -149,19 +149,43 @@ lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightb
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
 
 /* ════════════════════════════════════════
-   SMOOTH NAV HIGHLIGHT (optional)
+   NAVBAR — scroll shrink + mobile toggle + active link
 ════════════════════════════════════════ */
-const sections  = document.querySelectorAll("section[id]");
-const navLinks  = document.querySelectorAll("a[href^='#']");
+const navbar    = document.getElementById("navbar");
+const navToggle = document.getElementById("navToggle");
+const navMenu   = document.getElementById("navLinks");
+const navAnchors = document.querySelectorAll(".nav-link");
 
-const observer = new IntersectionObserver(entries => {
+/* Shrink on scroll */
+window.addEventListener("scroll", () => {
+  navbar.classList.toggle("scrolled", window.scrollY > 60);
+});
+
+/* Mobile hamburger */
+navToggle.addEventListener("click", () => {
+  navToggle.classList.toggle("open");
+  navMenu.classList.toggle("open");
+});
+
+/* Close menu on link click */
+navAnchors.forEach(a => {
+  a.addEventListener("click", () => {
+    navToggle.classList.remove("open");
+    navMenu.classList.remove("open");
+  });
+});
+
+/* Active link highlight on scroll */
+const sections = document.querySelectorAll("section[id]");
+
+const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      navLinks.forEach(a => {
+      navAnchors.forEach(a => {
         a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
       });
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.35, rootMargin: "-60px 0px 0px 0px" });
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => sectionObserver.observe(s));

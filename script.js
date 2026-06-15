@@ -1,26 +1,33 @@
 /* ════════════════════════════════════════
-   COUNTDOWN TIMER
+   COUNTDOWN TIMER — with flip animation
 ════════════════════════════════════════ */
 const weddingDate = new Date("Dec 25, 2026 19:00:00").getTime();
+const pad = n => String(n).padStart(2, "0");
+
+function setFlip(id, val) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const newVal = pad(val);
+  if (el.innerText !== newVal) {
+    el.classList.remove("flip-anim");
+    void el.offsetWidth;          /* force reflow so animation restarts */
+    el.innerText = newVal;
+    el.classList.add("flip-anim");
+  }
+}
 
 function updateCountdown() {
-  const now  = Date.now();
-  const gap  = weddingDate - now;
-
+  const gap = weddingDate - Date.now();
   if (gap <= 0) {
-    document.getElementById("days").innerText    = "00";
-    document.getElementById("hours").innerText   = "00";
-    document.getElementById("minutes").innerText = "00";
-    document.getElementById("seconds").innerText = "00";
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).innerText = "00";
+    });
     return;
   }
-
-  const pad = n => String(n).padStart(2, "0");
-
-  document.getElementById("days").innerText    = pad(Math.floor(gap / 864e5));
-  document.getElementById("hours").innerText   = pad(Math.floor((gap % 864e5) / 36e5));
-  document.getElementById("minutes").innerText = pad(Math.floor((gap % 36e5) / 6e4));
-  document.getElementById("seconds").innerText = pad(Math.floor((gap % 6e4) / 1e3));
+  setFlip("days",    Math.floor(gap / 864e5));
+  setFlip("hours",   Math.floor((gap % 864e5) / 36e5));
+  setFlip("minutes", Math.floor((gap % 36e5) / 6e4));
+  setFlip("seconds", Math.floor((gap % 6e4) / 1e3));
 }
 
 updateCountdown();

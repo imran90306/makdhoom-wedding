@@ -12,9 +12,26 @@
 </head>
 <body>
 
-  <!-- Add your Bismillah nasheed as assets/bismillah.mp3 -->
-  <audio id="bgMusic" loop><source src="assets/bismillah.mp3" type="audio/mpeg" /><source src="assets/music.mp3" type="audio/mpeg" /></audio>
-  <button id="musicBtn" title="Toggle Music"><i class="fas fa-music"></i></button>
+  <audio id="bgMusic" loop>
+    <source src="assets/bismillah.mp3" type="audio/mpeg" />
+    <source src="assets/music.mp3"     type="audio/mpeg" />
+  </audio>
+
+  <!-- Music button + tooltip -->
+  <div class="music-wrap" id="musicWrap">
+    <button id="musicBtn" title="Click to play music">
+      <i class="fas fa-music"></i>
+    </button>
+    <span class="music-tip" id="musicTip">Click to play music</span>
+  </div>
+
+  <!-- Toast notification (no-file warning / play prompt) -->
+  <div class="music-toast" id="musicToast">
+    <i class="fas fa-exclamation-circle"></i>
+    <span id="musicToastMsg">No audio file found — add <code>bismillah.mp3</code> to the <code>assets/</code> folder</span>
+    <button class="toast-close" onclick="document.getElementById('musicToast').classList.remove('show')">&#x2715;</button>
+  </div>
+
   <div id="tsparticles"></div>
 
   <!-- ══ NAVBAR ══ -->

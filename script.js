@@ -91,36 +91,94 @@ tsParticles.load("tsparticles", {
 });
 
 /* ════════════════════════════════════════
-   BACKGROUND MUSIC TOGGLE
+   BACKGROUND MUSIC — with error detection
 ════════════════════════════════════════ */
-const musicBtn = document.getElementById("musicBtn");
-const bgMusic  = document.getElementById("bgMusic");
-let   playing  = false;
+const musicBtn   = document.getElementById("musicBtn");
+const musicWrap  = document.getElementById("musicWrap");
+const musicTip   = document.getElementById("musicTip");
+const bgMusic    = document.getElementById("bgMusic");
+const musicToast = document.getElementById("musicToast");
+const toastMsg   = document.getElementById("musicToastMsg");
+let   playing    = false;
+let   audioOk    = true; /* flips false if file missing */
 
-musicBtn.addEventListener("click", () => {
-  if (playing) {
-    bgMusic.pause();
-    musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-    musicBtn.classList.add("paused");
-    playing = false;
-  } else {
-    bgMusic.play().catch(() => {});
+function showToast(msg, isError) {
+  toastMsg.innerHTML = msg;
+  musicToast.className = "music-toast show" + (isError ? " toast-error" : " toast-ok");
+  clearTimeout(musicToast._t);
+  musicToast._t = setTimeout(() => musicToast.classList.remove("show"), 5000);
+}
+
+function setPlaying(state) {
+  playing = state;
+  if (state) {
     musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
     musicBtn.classList.remove("paused");
-    playing = true;
+    musicTip.textContent = "Pause music";
+    musicWrap.classList.add("playing");
+  } else {
+    musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+    musicBtn.classList.add("paused");
+    musicTip.textContent = "Play music";
+    musicWrap.classList.remove("playing");
+  }
+}
+
+function tryPlay() {
+  if (!audioOk) {
+    showToast('No audio file found — add <code>bismillah.mp3</code> to the <code>assets/</code> folder', true);
+    return;
+  }
+  bgMusic.play()
+    .then(() => {
+      setPlaying(true);
+      showToast('<i class="fas fa-music"></i> Music is playing — enjoy!', false);
+    })
+    .catch(err => {
+      console.warn("Audio play error:", err);
+      showToast('Browser blocked autoplay — click the <i class="fas fa-music"></i> button to start music', true);
+    });
+}
+
+/* Detect missing / broken audio file */
+bgMusic.addEventListener("error", () => {
+  audioOk = false;
+  musicBtn.classList.add("no-audio");
+  musicTip.textContent = "No audio file";
+}, true);
+
+bgMusic.addEventListener("canplay", () => {
+  audioOk = true;
+  musicBtn.classList.remove("no-audio");
+});
+
+/* Music button click */
+musicBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (!audioOk) {
+    showToast('No audio file — add <code>bismillah.mp3</code> to your <code>assets/</code> folder', true);
+    return;
+  }
+  if (playing) {
+    bgMusic.pause();
+    setPlaying(false);
+  } else {
+    tryPlay();
   }
 });
 
-/* Auto-play on first user interaction */
+/* Show pulsing hint after 1.5 s so user notices the button */
+setTimeout(() => {
+  if (!playing) musicWrap.classList.add("hint");
+  /* Remove hint after 3 pulses */
+  setTimeout(() => musicWrap.classList.remove("hint"), 4500);
+}, 1500);
+
+/* Auto-play on very first interaction anywhere on page */
 document.addEventListener("click", function autoPlay() {
-  if (!playing) {
-    bgMusic.play().catch(() => {});
-    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-    musicBtn.classList.remove("paused");
-    playing = true;
-  }
+  if (!playing) tryPlay();
   document.removeEventListener("click", autoPlay);
-}, { once: true });
+}, { once: true, capture: false });
 
 /* ════════════════════════════════════════
    GALLERY LIGHTBOX

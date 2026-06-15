@@ -1,188 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rahul ❤️ Priya — Wedding</title>
+  <title>Makhdoom ❤️ Shammena — Wedding 2026</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
-
-  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- ░░ BACKGROUND MUSIC ░░ -->
-  <audio id="bgMusic" loop>
-    <source src="assets/music.mp3" type="audio/mpeg" />
-  </audio>
-
-  <!-- ░░ MUSIC TOGGLE ░░ -->
-  <button id="musicBtn" title="Toggle Music">
-    <i class="fas fa-music"></i>
-  </button>
-
-  <!-- ░░ PARTICLES (Floating Flowers / Petals) ░░ -->
+  <audio id="bgMusic" loop><source src="assets/music.mp3" type="audio/mpeg" /></audio>
+  <button id="musicBtn" title="Toggle Music"><i class="fas fa-music"></i></button>
   <div id="tsparticles"></div>
 
-  <!-- ══════════════════════════════════
-       HERO
-  ══════════════════════════════════ -->
+  <!-- ══ HERO ══ -->
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
-      <p class="hero-sub" data-aos="fade-down" data-aos-delay="200">Together With Their Families</p>
-      <h1 class="hero-names" data-aos="zoom-in" data-aos-delay="500">Rahul <span>&amp;</span> Priya</h1>
-      <p class="hero-tag" data-aos="fade-up" data-aos-delay="800">Are Getting Married</p>
-      <h2 class="hero-date" data-aos="fade-up" data-aos-delay="1000">December 25, 2026</h2>
-      <a href="#countdown" class="btn" data-aos="fade-up" data-aos-delay="1200">View Invitation</a>
+      <div class="bismillah" data-aos="fade-down" data-aos-delay="100">&#xFDFD;</div>
+      <p class="hero-bless" data-aos="fade-down" data-aos-delay="300">With the Blessings of Allah</p>
+      <div class="hero-names-wrap" data-aos="zoom-in" data-aos-delay="550">
+        <h1 class="hero-names">Makhdoom <span class="amp">&amp;</span> Shammena</h1>
+      </div>
+      <p class="hero-tag" data-aos="fade-up" data-aos-delay="780">Are Getting Married</p>
+      <h2 class="hero-date" data-aos="fade-up" data-aos-delay="980">
+        <i class="fas fa-star-and-crescent crescent"></i>
+        December 25, 2026
+        <i class="fas fa-star-and-crescent crescent flip"></i>
+      </h2>
+      <a href="#countdown" class="btn" data-aos="fade-up" data-aos-delay="1180">
+        <i class="fas fa-envelope-open"></i> View Invitation
+      </a>
     </div>
-
     <div class="scroll-indicator">
       <div class="mouse"><div class="wheel"></div></div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       COUNTDOWN
-  ══════════════════════════════════ -->
+  <!-- ══ COUNTDOWN ══ -->
   <section id="countdown">
     <div class="section-label" data-aos="fade-up">Mark Your Calendar</div>
     <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Countdown To The Big Day</h2>
-    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
-
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200">
+      <span></span><i class="fas fa-star-and-crescent"></i><span></span>
+    </div>
     <div class="timer" data-aos="fade-up" data-aos-delay="300">
-      <div class="timer-box">
-        <span id="days">00</span>
-        <p>Days</p>
-      </div>
+      <div class="timer-box"><span id="days">00</span><p>Days</p></div>
       <div class="timer-sep">:</div>
-      <div class="timer-box">
-        <span id="hours">00</span>
-        <p>Hours</p>
-      </div>
+      <div class="timer-box"><span id="hours">00</span><p>Hours</p></div>
       <div class="timer-sep">:</div>
-      <div class="timer-box">
-        <span id="minutes">00</span>
-        <p>Minutes</p>
-      </div>
+      <div class="timer-box"><span id="minutes">00</span><p>Minutes</p></div>
       <div class="timer-sep">:</div>
-      <div class="timer-box">
-        <span id="seconds">00</span>
-        <p>Seconds</p>
-      </div>
+      <div class="timer-box"><span id="seconds">00</span><p>Seconds</p></div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       OUR STORY
-  ══════════════════════════════════ -->
+  <!-- ══ STORY ══ -->
   <section class="story" id="story">
-    <div class="section-label" data-aos="fade-up">How It All Started</div>
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Our Love Story</h2>
-    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
-
+    <div class="section-label" data-aos="fade-up">Their Journey</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">A Blessed Love Story</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200">
+      <span></span><i class="fas fa-heart"></i><span></span>
+    </div>
     <div class="timeline">
 
       <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
         <div class="timeline-icon"><i class="fas fa-heart"></i></div>
         <div class="timeline-card">
-          <span class="tl-year">2022</span>
-          <h3>First Meet</h3>
-          <p>Two hearts crossed paths at a friend's gathering. A single glance turned into a conversation that lasted all night.</p>
+          <span class="tl-year">First Meet</span>
+          <h3>Two Souls Connected</h3>
+          <p>Their paths crossed through family and destiny. A single conversation sparked a connection written in the stars.</p>
         </div>
       </div>
 
       <div class="timeline-item right" data-aos="fade-left" data-aos-delay="200">
         <div class="timeline-icon"><i class="fas fa-ring"></i></div>
         <div class="timeline-card">
-          <span class="tl-year">2024</span>
-          <h3>The Proposal</h3>
-          <p>Under a canopy of stars, with roses all around, Rahul got down on one knee and asked the question of a lifetime.</p>
+          <span class="tl-year">Engagement</span>
+          <h3>A Promise of Forever</h3>
+          <p>With the blessings of their families and the grace of Allah, a beautiful promise was made to walk life together.</p>
         </div>
       </div>
 
       <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-        <div class="timeline-icon"><i class="fas fa-church"></i></div>
+        <div class="timeline-icon"><i class="fas fa-mosque"></i></div>
         <div class="timeline-card">
-          <span class="tl-year">2026</span>
-          <h3>Wedding Day</h3>
-          <p>The beginning of a beautiful journey together — surrounded by family, love, and endless blessings.</p>
+          <span class="tl-year">Nikah 2026</span>
+          <h3>The Sacred Union</h3>
+          <p>Two hearts, two families, one beautiful beginning — united in love, faith, and endless blessings.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       COUPLE SECTION
-  ══════════════════════════════════ -->
+  <!-- ══ COUPLE ══ -->
   <section class="couple" id="couple">
     <div class="section-label" data-aos="fade-up">The Two</div>
     <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Meet The Couple</h2>
-    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200">
+      <span></span><i class="fas fa-star-and-crescent"></i><span></span>
+    </div>
 
     <div class="couple-grid">
+
+      <!-- ─── GROOM ─── -->
       <div class="couple-card" data-aos="fade-right" data-aos-delay="200">
-        <div class="couple-img-wrap">
-          <img src="assets/couple1.jpg" alt="Rahul" />
+        <div class="couple-img-wrap groom-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+            <defs>
+              <radialGradient id="gr-bg" cx="50%" cy="65%" r="60%">
+                <stop offset="0%" stop-color="#daa84a"/>
+                <stop offset="100%" stop-color="#7a5008"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="100" fill="url(#gr-bg)"/>
+            <!-- Sherwani -->
+            <path d="M5 200 L5 158 Q52 144 100 142 Q148 144 195 158 L195 200Z" fill="#1a4228"/>
+            <path d="M5 160 Q100 150 195 160" stroke="#c9962a" stroke-width="2.5" fill="none"/>
+            <path d="M20 172 Q100 163 180 172" stroke="#c9962a" stroke-width="1.2" fill="none" opacity="0.55"/>
+            <path d="M100 142 L90 129 L100 122 L110 129 Z" fill="#112e1c"/>
+            <circle cx="100" cy="150" r="3.5" fill="#c9962a"/>
+            <circle cx="100" cy="162" r="3.5" fill="#c9962a"/>
+            <circle cx="100" cy="174" r="3.5" fill="#c9962a"/>
+            <!-- Neck -->
+            <rect x="88" y="125" width="24" height="22" rx="6" fill="#c4906a"/>
+            <!-- Head -->
+            <ellipse cx="100" cy="85" rx="53" ry="58" fill="#c4906a"/>
+            <!-- Ears -->
+            <ellipse cx="47" cy="87" rx="10" ry="13" fill="#b07848"/>
+            <ellipse cx="153" cy="87" rx="10" ry="13" fill="#b07848"/>
+            <ellipse cx="47" cy="87" rx="7" ry="10" fill="#c4906a"/>
+            <ellipse cx="153" cy="87" rx="7" ry="10" fill="#c4906a"/>
+            <!-- Topi -->
+            <ellipse cx="100" cy="37" rx="47" ry="19" fill="#f0f0f0"/>
+            <ellipse cx="100" cy="33" rx="45" ry="16" fill="white"/>
+            <path d="M55 33 Q100 27 145 33" stroke="#e0e0e0" stroke-width="1" fill="none"/>
+            <path d="M57 40 Q100 35 143 40" stroke="#e0e0e0" stroke-width="1" fill="none"/>
+            <line x1="100" y1="17" x2="100" y2="52" stroke="#e8e8e8" stroke-width="0.8"/>
+            <line x1="79" y1="18" x2="77" y2="52" stroke="#e8e8e8" stroke-width="0.8"/>
+            <line x1="121" y1="18" x2="123" y2="52" stroke="#e8e8e8" stroke-width="0.8"/>
+            <path d="M53 51 Q100 57 147 51" stroke="#c9962a" stroke-width="2" fill="none"/>
+            <!-- Eyebrows -->
+            <path d="M72 72 Q83 67 93 72" stroke="#2a1400" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M107 72 Q117 67 128 72" stroke="#2a1400" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Eyes -->
+            <ellipse cx="82" cy="82" rx="10" ry="10.5" fill="white"/>
+            <ellipse cx="118" cy="82" rx="10" ry="10.5" fill="white"/>
+            <circle cx="83" cy="83" r="7" fill="#2a1000"/>
+            <circle cx="119" cy="83" r="7" fill="#2a1000"/>
+            <circle cx="85" cy="80" r="2.5" fill="white"/>
+            <circle cx="121" cy="80" r="2.5" fill="white"/>
+            <!-- Nose -->
+            <path d="M100 94 Q97 104 92 107 Q100 111 108 107 Q103 104 100 94" fill="#a87048"/>
+            <!-- Beard -->
+            <path d="M48 105 Q46 139 70 150 Q85 157 100 158 Q115 157 130 150 Q154 139 152 105 Q136 127 100 130 Q64 127 48 105Z" fill="#160700" opacity="0.93"/>
+            <!-- Mustache -->
+            <path d="M83 111 Q100 118 117 111" stroke="#160700" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- Smile -->
+            <path d="M88 122 Q100 130 112 122" stroke="#7a4028" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
         </div>
-        <h3>Rahul Sharma</h3>
-        <p>Son of Mr. &amp; Mrs. Sharma</p>
+        <h3>Mohammed Makhdoom Nawaz</h3>
+        <p class="couple-role">Son of Mr. &amp; Mrs. Nawaz</p>
+        <div class="couple-tag"><i class="fas fa-mosque"></i> The Groom</div>
         <div class="couple-socials">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
       </div>
 
+      <!-- ─── HEART ─── -->
       <div class="couple-heart" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fas fa-heart"></i>
+        <div class="heart-ring"><i class="fas fa-heart"></i></div>
+        <p class="nikah-text">Nikah</p>
       </div>
 
+      <!-- ─── BRIDE ─── -->
       <div class="couple-card" data-aos="fade-left" data-aos-delay="200">
-        <div class="couple-img-wrap">
-          <img src="assets/couple2.jpg" alt="Priya" />
+        <div class="couple-img-wrap bride-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+            <defs>
+              <radialGradient id="br-bg" cx="50%" cy="65%" r="60%">
+                <stop offset="0%" stop-color="#f9c0d4"/>
+                <stop offset="100%" stop-color="#8a1030"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="100" fill="url(#br-bg)"/>
+            <!-- Dress -->
+            <path d="M5 200 L5 160 Q52 149 100 147 Q148 149 195 160 L195 200Z" fill="#7b1a3a"/>
+            <path d="M5 162 Q100 153 195 162" stroke="#c9962a" stroke-width="2.5" fill="none"/>
+            <path d="M18 174 Q100 165 182 174" stroke="#c9962a" stroke-width="1.2" fill="none" opacity="0.55"/>
+            <!-- Neck -->
+            <rect x="88" y="133" width="24" height="20" rx="6" fill="#c4906a"/>
+            <!-- Hijab back -->
+            <ellipse cx="100" cy="81" rx="67" ry="74" fill="#7b1a3a"/>
+            <!-- Face -->
+            <ellipse cx="100" cy="85" rx="49" ry="53" fill="#c4906a"/>
+            <!-- Hijab sides -->
+            <path d="M51 79 Q30 99 34 151 Q60 159 100 161 Q140 159 166 151 Q170 99 149 79 Q137 141 100 143 Q63 141 51 79Z" fill="#7b1a3a"/>
+            <!-- Hijab top frame -->
+            <path d="M62 47 Q100 33 138 47 Q150 61 150 81 Q136 69 100 67 Q64 69 50 81 Q50 61 62 47Z" fill="#7b1a3a"/>
+            <!-- Gold border -->
+            <path d="M62 48 Q100 34 138 48" stroke="#c9962a" stroke-width="2.5" fill="none"/>
+            <path d="M50 79 Q44 113 48 151" stroke="#c9962a" stroke-width="1.5" fill="none" opacity="0.65"/>
+            <path d="M150 79 Q156 113 152 151" stroke="#c9962a" stroke-width="1.5" fill="none" opacity="0.65"/>
+            <!-- Gold dots on hijab -->
+            <circle cx="68" cy="91" r="2.2" fill="#c9962a" opacity="0.7"/>
+            <circle cx="132" cy="91" r="2.2" fill="#c9962a" opacity="0.7"/>
+            <circle cx="58" cy="114" r="1.8" fill="#c9962a" opacity="0.5"/>
+            <circle cx="142" cy="114" r="1.8" fill="#c9962a" opacity="0.5"/>
+            <!-- Earring -->
+            <circle cx="50" cy="101" r="5.5" fill="#c9962a"/>
+            <circle cx="50" cy="110" r="3.5" fill="#c9962a"/>
+            <circle cx="50" cy="101" r="2" fill="rgba(255,255,255,0.5)"/>
+            <!-- Eyebrows -->
+            <path d="M71 67 Q82 61 93 67" stroke="#2a1400" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M107 67 Q118 61 129 67" stroke="#2a1400" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Eyes -->
+            <ellipse cx="82" cy="77" rx="10" ry="10.5" fill="white"/>
+            <ellipse cx="118" cy="77" rx="10" ry="10.5" fill="white"/>
+            <circle cx="82" cy="78" r="7" fill="#2a1000"/>
+            <circle cx="118" cy="78" r="7" fill="#2a1000"/>
+            <circle cx="84" cy="75" r="2.5" fill="white"/>
+            <circle cx="120" cy="75" r="2.5" fill="white"/>
+            <!-- Lashes -->
+            <path d="M72 69 Q77 66 82 71" stroke="#160700" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M82 69 Q87 65 92 70" stroke="#160700" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M108 70 Q113 65 118 69" stroke="#160700" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M118 71 Q123 66 128 69" stroke="#160700" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Nose -->
+            <path d="M100 87 Q97 97 92 100 Q100 104 108 100 Q103 97 100 87" fill="#a87048"/>
+            <!-- Nose pin -->
+            <circle cx="107" cy="100" r="2.8" fill="#c9962a"/>
+            <circle cx="107" cy="100" r="1.2" fill="rgba(255,255,255,0.5)"/>
+            <!-- Lips -->
+            <path d="M85 113 Q93 108 100 110 Q107 108 115 113 Q109 122 100 123 Q91 122 85 113Z" fill="#c03060"/>
+            <path d="M85 113 Q100 117 115 113" stroke="#a01040" stroke-width="1" fill="none"/>
+            <!-- Blush -->
+            <ellipse cx="67" cy="95" rx="13" ry="8" fill="#f48fb1" opacity="0.38"/>
+            <ellipse cx="133" cy="95" rx="13" ry="8" fill="#f48fb1" opacity="0.38"/>
+            <!-- Maang tikka -->
+            <line x1="100" y1="52" x2="100" y2="66" stroke="#c9962a" stroke-width="1.5"/>
+            <circle cx="100" cy="50" r="6" fill="#c9962a"/>
+            <circle cx="100" cy="50" r="3.5" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="100" cy="67" r="4" fill="#c9962a"/>
+          </svg>
         </div>
-        <h3>Priya Reddy</h3>
-        <p>Daughter of Mr. &amp; Mrs. Reddy</p>
+        <h3>Shaik Shammena Banu</h3>
+        <p class="couple-role">Daughter of Mr. &amp; Mrs. Shaik</p>
+        <div class="couple-tag bride-tag"><i class="fas fa-star"></i> The Bride</div>
         <div class="couple-socials">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       EVENTS
-  ══════════════════════════════════ -->
+  <!-- ══ EVENTS ══ -->
   <section class="events" id="events">
     <div class="section-label" data-aos="fade-up">Save The Date</div>
     <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Wedding Events</h2>
-    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
-
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200">
+      <span></span><i class="fas fa-star-and-crescent"></i><span></span>
+    </div>
     <div class="events-grid">
 
       <div class="event-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="event-icon"><i class="fas fa-sun"></i></div>
-        <h3>Haldi Ceremony</h3>
+        <div class="event-icon"><i class="fas fa-moon"></i></div>
+        <h3>Mehndi Night</h3>
         <p class="event-date"><i class="far fa-calendar-alt"></i> December 24, 2026</p>
-        <p class="event-time"><i class="far fa-clock"></i> 10:00 AM</p>
-        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Sharma Residence, Nellore</p>
+        <p class="event-time"><i class="far fa-clock"></i> 7:00 PM onwards</p>
+        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Shaik Residence, Nellore</p>
       </div>
 
       <div class="event-card featured" data-aos="fade-up" data-aos-delay="200">
-        <div class="event-icon"><i class="fas fa-star"></i></div>
-        <h3>Wedding Ceremony</h3>
+        <div class="featured-badge">Main Event</div>
+        <div class="event-icon"><i class="fas fa-mosque"></i></div>
+        <h3>Nikah Ceremony</h3>
         <p class="event-date"><i class="far fa-calendar-alt"></i> December 25, 2026</p>
         <p class="event-time"><i class="far fa-clock"></i> 7:00 PM</p>
         <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Grand Convention Hall, Nellore</p>
@@ -190,23 +290,22 @@
 
       <div class="event-card" data-aos="fade-up" data-aos-delay="300">
         <div class="event-icon"><i class="fas fa-utensils"></i></div>
-        <h3>Wedding Reception</h3>
+        <h3>Walima</h3>
         <p class="event-date"><i class="far fa-calendar-alt"></i> December 26, 2026</p>
-        <p class="event-time"><i class="far fa-clock"></i> 6:00 PM</p>
+        <p class="event-time"><i class="far fa-clock"></i> 1:00 PM</p>
         <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Grand Convention Hall, Nellore</p>
       </div>
 
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       LOCATION
-  ══════════════════════════════════ -->
+  <!-- ══ LOCATION ══ -->
   <section class="location" id="location">
     <div class="section-label" data-aos="fade-up">Find Us Here</div>
     <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Venue</h2>
-    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
-
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200">
+      <span></span><i class="fas fa-map-marker-alt"></i><span></span>
+    </div>
     <div class="location-content" data-aos="fade-up" data-aos-delay="300">
       <div class="location-details">
         <i class="fas fa-map-marker-alt location-icon"></i>
@@ -217,88 +316,62 @@
         </a>
       </div>
       <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.45697835504!2d79.9288858!3d14.4426025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4c8e0e0e0e0e0e%3A0x0!2sNellore%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1600000000000"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.45697835504!2d79.9288858!3d14.4426025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4c8e0e0e0e0e0e%3A0x0!2sNellore%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1600000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       GALLERY
-  ══════════════════════════════════ -->
+  <!-- ══ GALLERY ══ -->
   <section class="gallery" id="gallery">
     <div class="section-label" data-aos="fade-up">Memories</div>
     <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Photo Gallery</h2>
-    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-        <img src="assets/gallery1.jpg" alt="Gallery 1" />
-        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-        <img src="assets/gallery2.jpg" alt="Gallery 2" />
-        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-        <img src="assets/gallery1.jpg" alt="Gallery 3" />
-        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
-        <img src="assets/gallery2.jpg" alt="Gallery 4" />
-        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-        <img src="assets/gallery1.jpg" alt="Gallery 5" />
-        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
-        <img src="assets/gallery2.jpg" alt="Gallery 6" />
-        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
-      </div>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200">
+      <span></span><i class="fas fa-images"></i><span></span>
     </div>
-
-    <!-- Lightbox -->
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="assets/gallery1.jpg" alt="" /><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150"><img src="assets/gallery2.jpg" alt="" /><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="assets/gallery1.jpg" alt="" /><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250"><img src="assets/gallery2.jpg" alt="" /><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="assets/gallery1.jpg" alt="" /><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350"><img src="assets/gallery2.jpg" alt="" /><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+    </div>
     <div class="lightbox" id="lightbox">
       <span class="lb-close" id="lbClose">&times;</span>
       <img id="lbImg" src="" alt="" />
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       RSVP
-  ══════════════════════════════════ -->
+  <!-- ══ RSVP ══ -->
   <section class="rsvp" id="rsvp">
-    <div class="rsvp-overlay"></div>
     <div class="rsvp-content" data-aos="zoom-in">
+      <div class="bismillah rsvp-bismillah">&#xFDFD;</div>
       <div class="section-label light">Join Us</div>
-      <h2 class="section-title light">RSVP</h2>
-      <div class="divider light" data-aos="zoom-in" data-aos-delay="200"></div>
-      <p>Your presence is the greatest gift.<br />Please confirm your attendance before December 10, 2026.</p>
+      <h2 class="section-title light">You Are Invited</h2>
+      <div class="divider light">
+        <span></span><i class="fas fa-star-and-crescent"></i><span></span>
+      </div>
+      <p>Your presence is the greatest gift.<br />Please confirm your attendance before <strong>December 10, 2026</strong>.</p>
       <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn btn-white">
         <i class="fas fa-envelope-open-text"></i> RSVP Now
       </a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-       FOOTER
-  ══════════════════════════════════ -->
+  <!-- ══ FOOTER ══ -->
   <footer>
-    <div class="footer-names">Rahul <span>&amp;</span> Priya</div>
-    <p class="footer-date">December 25, 2026</p>
+    <div class="footer-bismillah">&#xFDFD;</div>
+    <div class="footer-names">Makhdoom <span>&amp;</span> Shammena</div>
+    <p class="footer-full">Mohammed Makhdoom Nawaz &amp; Shaik Shammena Banu</p>
+    <p class="footer-date">
+      <i class="fas fa-star-and-crescent"></i> December 25, 2026 <i class="fas fa-star-and-crescent"></i>
+    </p>
     <div class="footer-divider"></div>
-    <p class="footer-copy">Made with <i class="fas fa-heart"></i> for our special day</p>
+    <p class="footer-copy">Made with <i class="fas fa-heart"></i> for their blessed union</p>
   </footer>
 
-  <!-- ░░ SCRIPTS ░░ -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>

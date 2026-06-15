@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul ❤️ Priya — Wedding</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ░░ BACKGROUND MUSIC ░░ -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ░░ MUSIC TOGGLE ░░ -->
+  <button id="musicBtn" title="Toggle Music">
+    <i class="fas fa-music"></i>
+  </button>
+
+  <!-- ░░ PARTICLES (Floating Flowers / Petals) ░░ -->
+  <div id="tsparticles"></div>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-sub" data-aos="fade-down" data-aos-delay="200">Together With Their Families</p>
+      <h1 class="hero-names" data-aos="zoom-in" data-aos-delay="500">Rahul <span>&amp;</span> Priya</h1>
+      <p class="hero-tag" data-aos="fade-up" data-aos-delay="800">Are Getting Married</p>
+      <h2 class="hero-date" data-aos="fade-up" data-aos-delay="1000">December 25, 2026</h2>
+      <a href="#countdown" class="btn" data-aos="fade-up" data-aos-delay="1200">View Invitation</a>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse"><div class="wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       COUNTDOWN
+  ══════════════════════════════════ -->
+  <section id="countdown">
+    <div class="section-label" data-aos="fade-up">Mark Your Calendar</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Countdown To The Big Day</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+
+    <div class="timer" data-aos="fade-up" data-aos-delay="300">
+      <div class="timer-box">
+        <span id="days">00</span>
+        <p>Days</p>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-box">
+        <span id="hours">00</span>
+        <p>Hours</p>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-box">
+        <span id="minutes">00</span>
+        <p>Minutes</p>
+      </div>
+      <div class="timer-sep">:</div>
+      <div class="timer-box">
+        <span id="seconds">00</span>
+        <p>Seconds</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       OUR STORY
+  ══════════════════════════════════ -->
+  <section class="story" id="story">
+    <div class="section-label" data-aos="fade-up">How It All Started</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Our Love Story</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+
+    <div class="timeline">
+
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+        <div class="timeline-card">
+          <span class="tl-year">2022</span>
+          <h3>First Meet</h3>
+          <p>Two hearts crossed paths at a friend's gathering. A single glance turned into a conversation that lasted all night.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right" data-aos="fade-left" data-aos-delay="200">
+        <div class="timeline-icon"><i class="fas fa-ring"></i></div>
+        <div class="timeline-card">
+          <span class="tl-year">2024</span>
+          <h3>The Proposal</h3>
+          <p>Under a canopy of stars, with roses all around, Rahul got down on one knee and asked the question of a lifetime.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+        <div class="timeline-icon"><i class="fas fa-church"></i></div>
+        <div class="timeline-card">
+          <span class="tl-year">2026</span>
+          <h3>Wedding Day</h3>
+          <p>The beginning of a beautiful journey together — surrounded by family, love, and endless blessings.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       COUPLE SECTION
+  ══════════════════════════════════ -->
+  <section class="couple" id="couple">
+    <div class="section-label" data-aos="fade-up">The Two</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Meet The Couple</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+
+    <div class="couple-grid">
+      <div class="couple-card" data-aos="fade-right" data-aos-delay="200">
+        <div class="couple-img-wrap">
+          <img src="assets/couple1.jpg" alt="Rahul" />
+        </div>
+        <h3>Rahul Sharma</h3>
+        <p>Son of Mr. &amp; Mrs. Sharma</p>
+        <div class="couple-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="couple-heart" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-heart"></i>
+      </div>
+
+      <div class="couple-card" data-aos="fade-left" data-aos-delay="200">
+        <div class="couple-img-wrap">
+          <img src="assets/couple2.jpg" alt="Priya" />
+        </div>
+        <h3>Priya Reddy</h3>
+        <p>Daughter of Mr. &amp; Mrs. Reddy</p>
+        <div class="couple-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       EVENTS
+  ══════════════════════════════════ -->
+  <section class="events" id="events">
+    <div class="section-label" data-aos="fade-up">Save The Date</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Wedding Events</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+
+    <div class="events-grid">
+
+      <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-icon"><i class="fas fa-sun"></i></div>
+        <h3>Haldi Ceremony</h3>
+        <p class="event-date"><i class="far fa-calendar-alt"></i> December 24, 2026</p>
+        <p class="event-time"><i class="far fa-clock"></i> 10:00 AM</p>
+        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Sharma Residence, Nellore</p>
+      </div>
+
+      <div class="event-card featured" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-icon"><i class="fas fa-star"></i></div>
+        <h3>Wedding Ceremony</h3>
+        <p class="event-date"><i class="far fa-calendar-alt"></i> December 25, 2026</p>
+        <p class="event-time"><i class="far fa-clock"></i> 7:00 PM</p>
+        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Grand Convention Hall, Nellore</p>
+      </div>
+
+      <div class="event-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-icon"><i class="fas fa-utensils"></i></div>
+        <h3>Wedding Reception</h3>
+        <p class="event-date"><i class="far fa-calendar-alt"></i> December 26, 2026</p>
+        <p class="event-time"><i class="far fa-clock"></i> 6:00 PM</p>
+        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Grand Convention Hall, Nellore</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       LOCATION
+  ══════════════════════════════════ -->
+  <section class="location" id="location">
+    <div class="section-label" data-aos="fade-up">Find Us Here</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Venue</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+
+    <div class="location-content" data-aos="fade-up" data-aos-delay="300">
+      <div class="location-details">
+        <i class="fas fa-map-marker-alt location-icon"></i>
+        <h3>Grand Convention Hall</h3>
+        <p>123, MG Road, Nellore,<br />Andhra Pradesh — 524001</p>
+        <a href="https://maps.google.com" target="_blank" class="btn btn-outline">
+          <i class="fas fa-directions"></i> Get Directions
+        </a>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.45697835504!2d79.9288858!3d14.4426025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4c8e0e0e0e0e0e%3A0x0!2sNellore%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1600000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       GALLERY
+  ══════════════════════════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="section-label" data-aos="fade-up">Memories</div>
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Photo Gallery</h2>
+    <div class="divider" data-aos="zoom-in" data-aos-delay="200"></div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/gallery1.jpg" alt="Gallery 1" />
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+        <img src="assets/gallery2.jpg" alt="Gallery 2" />
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/gallery1.jpg" alt="Gallery 3" />
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
+        <img src="assets/gallery2.jpg" alt="Gallery 4" />
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/gallery1.jpg" alt="Gallery 5" />
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
+        <img src="assets/gallery2.jpg" alt="Gallery 6" />
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="lb-close" id="lbClose">&times;</span>
+      <img id="lbImg" src="" alt="" />
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       RSVP
+  ══════════════════════════════════ -->
+  <section class="rsvp" id="rsvp">
+    <div class="rsvp-overlay"></div>
+    <div class="rsvp-content" data-aos="zoom-in">
+      <div class="section-label light">Join Us</div>
+      <h2 class="section-title light">RSVP</h2>
+      <div class="divider light" data-aos="zoom-in" data-aos-delay="200"></div>
+      <p>Your presence is the greatest gift.<br />Please confirm your attendance before December 10, 2026.</p>
+      <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn btn-white">
+        <i class="fas fa-envelope-open-text"></i> RSVP Now
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer>
+    <div class="footer-names">Rahul <span>&amp;</span> Priya</div>
+    <p class="footer-date">December 25, 2026</p>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">Made with <i class="fas fa-heart"></i> for our special day</p>
+  </footer>
+
+  <!-- ░░ SCRIPTS ░░ -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

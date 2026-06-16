@@ -1,3 +1,7 @@
+/* Prevent browser restoring mid-page scroll position on mobile */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 /* ════════════════════════════════════════
    COUNTDOWN TIMER — with flip animation
 ════════════════════════════════════════ */

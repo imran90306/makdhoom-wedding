@@ -273,7 +273,7 @@ section { position: relative; z-index: 1; padding: 110px 8%; text-align: center;
    HERO
 ════════════════════════════════════════ */
 .hero {
-  height: 100vh; min-height: 620px;
+  height: 100vh; height: 100dvh; min-height: 620px;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex; flex-direction: column;
   justify-content: center; align-items: center;
@@ -795,6 +795,24 @@ footer {
 /* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .events-grid { gap: 20px; }
+  .couple-grid { gap: 36px; }
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
+}
+
+@media (max-width: 768px) {
+  section { padding: 70px 6%; }
+  .hero-names { font-size: clamp(1.5rem, 6vw, 2.6rem); }
+  .events-grid { flex-direction: column; align-items: center; gap: 20px; }
+  .event-card { max-width: 100%; width: 100%; }
+  .event-card.featured { transform: none; }
+  .event-card.featured:hover { transform: translateY(-6px); }
+  .couple-grid { gap: 28px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .map-wrap { height: 240px; }
+}
+
 @media (max-width: 900px) {
   .timeline::before { left: 28px; }
   .timeline-item,

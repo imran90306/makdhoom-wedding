@@ -196,6 +196,7 @@ const lbCounter = document.getElementById("lbCounter");
 
 const galleryItems = [...document.querySelectorAll(".gallery-item")];
 let currentIndex = 0;
+let lbHistoryPushed = false;
 
 function openLightbox(index) {
   currentIndex = index;
@@ -204,6 +205,9 @@ function openLightbox(index) {
   lbCounter.textContent = (currentIndex + 1) + " / " + galleryItems.length;
   lightbox.classList.add("active");
   document.body.style.overflow = "hidden";
+  /* Push a history state so the back button closes the lightbox */
+  history.pushState({ lightbox: true }, "");
+  lbHistoryPushed = true;
 }
 
 function showImage(index, direction) {
@@ -223,10 +227,26 @@ galleryItems.forEach((item, i) => {
 });
 
 function closeLightbox() {
+  if (!lightbox.classList.contains("active")) return;
   lightbox.classList.remove("active", "going-prev");
   document.body.style.overflow = "";
   lbImg.src = "";
+  /* Go back only if we pushed the state ourselves (not if back button triggered this) */
+  if (lbHistoryPushed) {
+    lbHistoryPushed = false;
+    history.back();
+  }
 }
+
+/* Back button on mobile: close lightbox instead of leaving the page */
+window.addEventListener("popstate", () => {
+  if (lightbox.classList.contains("active")) {
+    lbHistoryPushed = false;
+    lightbox.classList.remove("active", "going-prev");
+    document.body.style.overflow = "";
+    lbImg.src = "";
+  }
+});
 
 lbClose.addEventListener("click", closeLightbox);
 lbPrev.addEventListener("click", e => { e.stopPropagation(); showImage(currentIndex - 1, "prev"); });

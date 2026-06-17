@@ -3,20 +3,22 @@ if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
 /* ════════════════════════════════════════
-   COVER PAGE — dismiss on "View Invitation"
+   COVER DOOR — open on "View Invitation"
 ════════════════════════════════════════ */
 document.addEventListener("DOMContentLoaded", () => {
   const coverPage = document.getElementById("coverPage");
   const viewBtn   = document.getElementById("viewInvitationBtn");
+  const doorCta   = document.getElementById("doorCta");
   if (!coverPage || !viewBtn) return;
 
   viewBtn.addEventListener("click", () => {
-    coverPage.classList.add("cover-exit");
-    coverPage.addEventListener("animationend", () => {
+    if (doorCta) doorCta.classList.add("hidden");
+    coverPage.classList.add("door-open");
+    setTimeout(() => {
       coverPage.remove();
       document.body.classList.remove("cover-active");
       window.scrollTo(0, 0);
-    }, { once: true });
+    }, 1700);
   });
 });
 

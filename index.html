@@ -13,23 +13,67 @@
 </head>
 <body class="cover-active">
 
-  <!-- ══ COVER / SPLASH PAGE ══ -->
+  <!-- ══ COVER / DOOR PAGE ══ -->
   <div id="coverPage">
-    <div class="cover-inner">
-      <div class="cover-bismillah">&#xFDFD;</div>
-      <div class="cover-ornament top"></div>
-      <p class="cover-bless">With the Blessings of Allah</p>
-      <div class="cover-divider"><span></span><i class="fas fa-star-and-crescent"></i><span></span></div>
-      <h1 class="cover-names">Makhdoom <span class="cover-amp">&amp;</span> Shameena</h1>
-      <p class="cover-tag">Are Getting Married</p>
-      <p class="cover-date"><i class="fas fa-star-and-crescent"></i> December 25, 2026 <i class="fas fa-star-and-crescent"></i></p>
-      <div class="cover-divider"><span></span><i class="fas fa-heart"></i><span></span></div>
-      <button id="viewInvitationBtn" class="cover-btn">
-        <i class="fas fa-envelope-open-text"></i> View Invitation
-      </button>
-      <div class="cover-ornament bottom"></div>
-      <p class="cover-scroll-hint"><i class="fas fa-chevron-down"></i></p>
+
+    <!-- Left Door -->
+    <div class="door door-left">
+      <div class="door-inset">
+        <div class="door-top-panel">
+          <div class="dtop-arc"></div>
+          <i class="fas fa-star-and-crescent dtop-icon"></i>
+          <div class="dtop-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="door-strip"></div>
+        <div class="door-main-panel">
+          <div class="door-medallion">
+            <div class="med-ring r1"></div>
+            <div class="med-ring r2"></div>
+            <div class="med-ring r3"></div>
+            <i class="fas fa-mosque med-icon"></i>
+          </div>
+        </div>
+        <div class="door-strip"></div>
+        <div class="door-bottom-panel">
+          <i class="fas fa-star-and-crescent dbot-icon"></i>
+        </div>
+      </div>
+      <div class="door-knob knob-r"></div>
     </div>
+
+    <!-- Right Door -->
+    <div class="door door-right">
+      <div class="door-inset">
+        <div class="door-top-panel">
+          <div class="dtop-arc"></div>
+          <i class="fas fa-star-and-crescent dtop-icon flip-h"></i>
+          <div class="dtop-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="door-strip"></div>
+        <div class="door-main-panel">
+          <div class="door-medallion">
+            <div class="med-ring r1"></div>
+            <div class="med-ring r2"></div>
+            <div class="med-ring r3"></div>
+            <i class="fas fa-mosque med-icon"></i>
+          </div>
+        </div>
+        <div class="door-strip"></div>
+        <div class="door-bottom-panel">
+          <i class="fas fa-star-and-crescent dbot-icon flip-h"></i>
+        </div>
+      </div>
+      <div class="door-knob knob-l"></div>
+    </div>
+
+    <!-- Centre button over the seam -->
+    <div id="doorCta">
+      <button id="viewInvitationBtn" class="cover-btn">
+        <i class="fas fa-envelope-open-text"></i>
+        <span>View Invitation</span>
+      </button>
+    </div>
+
   </div>
 
   <audio id="bgMusic" loop>

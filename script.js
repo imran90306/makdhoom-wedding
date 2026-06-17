@@ -3,6 +3,24 @@ if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
 /* ════════════════════════════════════════
+   COVER PAGE — dismiss on "View Invitation"
+════════════════════════════════════════ */
+document.addEventListener("DOMContentLoaded", () => {
+  const coverPage = document.getElementById("coverPage");
+  const viewBtn   = document.getElementById("viewInvitationBtn");
+  if (!coverPage || !viewBtn) return;
+
+  viewBtn.addEventListener("click", () => {
+    coverPage.classList.add("cover-exit");
+    coverPage.addEventListener("animationend", () => {
+      coverPage.remove();
+      document.body.classList.remove("cover-active");
+      window.scrollTo(0, 0);
+    }, { once: true });
+  });
+});
+
+/* ════════════════════════════════════════
    COUNTDOWN TIMER — with flip animation
 ════════════════════════════════════════ */
 const weddingDate = new Date("Dec 25, 2026 19:00:00").getTime();

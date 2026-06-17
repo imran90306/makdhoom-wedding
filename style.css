@@ -30,246 +30,293 @@ body {
 body.cover-active { overflow: hidden; }
 
 /* ════════════════════════════════════════
-   COVER — DOUBLE DOOR
+   COVER — WEDDING INVITATION
 ════════════════════════════════════════ */
 #coverPage {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  perspective: 1800px;
-  perspective-origin: 50% 48%;
-  background: #07020a;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(123,26,58,.55) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 60% at 50% 100%,  rgba(84,16,42,.45)  0%, transparent 65%),
+    radial-gradient(ellipse 50% 100% at 0%  50%,  rgba(42,8,21,.5)    0%, transparent 60%),
+    radial-gradient(ellipse 50% 100% at 100% 50%, rgba(42,8,21,.5)    0%, transparent 60%),
+    #0c0209;
 }
 
-/* warm golden glow at the centre seam */
-#coverPage::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  left: calc(50% - 2px);
-  width: 4px;
-  background: linear-gradient(180deg,
-    transparent 0%,
-    rgba(201,150,42,.5) 25%,
-    rgba(232,184,75,.8) 50%,
-    rgba(201,150,42,.5) 75%,
-    transparent 100%);
-  box-shadow: 0 0 28px 10px rgba(201,150,42,.3);
-  z-index: 6;
-  pointer-events: none;
-  transition: opacity .5s;
-}
-#coverPage.door-open::before { opacity: 0; }
-
-/* ── DOORS ── */
-.door {
+/* ── SLIDING PANELS ── */
+.inv-panel {
   position: absolute;
   top: 0; height: 100%; width: 50%;
-  transform-style: preserve-3d;
-  transition: transform 1.6s cubic-bezier(.645,.045,.355,1);
-  will-change: transform;
-  overflow: hidden;
-}
-.door-left {
-  left: 0;
-  transform-origin: left center;
+  z-index: 1;
+  transition: transform 1.55s cubic-bezier(.77,0,.18,1);
   background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 32px,
-      rgba(255,255,255,.012) 32px, rgba(255,255,255,.012) 33px),
-    linear-gradient(115deg, #5e1535 0%, #3e0d22 50%, #220810 100%);
-  border-right: 2px solid var(--gold);
-  box-shadow: inset -10px 0 30px rgba(0,0,0,.55),
-              inset  0   0 60px rgba(0,0,0,.25);
+    radial-gradient(ellipse 140% 80% at 50% 30%, rgba(94,21,53,.6) 0%, transparent 65%),
+    #0c0209;
 }
-.door-right {
-  right: 0;
-  transform-origin: right center;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 32px,
-      rgba(255,255,255,.012) 32px, rgba(255,255,255,.012) 33px),
-    linear-gradient(245deg, #5e1535 0%, #3e0d22 50%, #220810 100%);
-  border-left: 2px solid var(--gold);
-  box-shadow: inset 10px 0 30px rgba(0,0,0,.55),
-              inset  0  0 60px rgba(0,0,0,.25);
-}
+.inv-panel-l { left: 0;  border-right: 1px solid rgba(201,150,42,.35); }
+.inv-panel-r { right: 0; border-left:  1px solid rgba(201,150,42,.35); }
 
-/* door open — swing on click */
-#coverPage.door-open .door-left  { transform: rotateY(-125deg); }
-#coverPage.door-open .door-right { transform: rotateY(125deg);  }
+#coverPage.door-open .inv-panel-l { transform: translateX(-100%); }
+#coverPage.door-open .inv-panel-r { transform: translateX(100%);  }
 
-/* ── INSET GOLD FRAME ── */
-.door-inset {
+/* ── CORNER ORNAMENTS ── */
+.inv-corner {
   position: absolute;
-  inset: 18px 12px;
-  border: 1px solid rgba(201,150,42,.45);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 14px 8px;
-  gap: 0;
+  z-index: 3;
+  width: clamp(55px, 9vw, 100px);
+  height: clamp(55px, 9vw, 100px);
+  pointer-events: none;
 }
-/* corner jewels */
-.door-inset::before, .door-inset::after,
-.door-left .door-inset ~ .door-inset-bl,
-.door-right .door-inset ~ .door-inset-br {
+.inv-corner::before {
   content: '';
   position: absolute;
-  width: 9px; height: 9px;
+  background: linear-gradient(90deg, var(--gold-lt), transparent);
+  height: 2px; width: 100%;
+  top: 0; left: 0;
+  border-radius: 2px;
+  opacity: .7;
+}
+.inv-corner::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(180deg, var(--gold-lt), transparent);
+  width: 2px; height: 100%;
+  top: 0; left: 0;
+  border-radius: 2px;
+  opacity: .7;
+}
+.c-tl { top: 18px; left: 18px; }
+.c-tr { top: 18px; right: 18px; transform: scaleX(-1); }
+.c-bl { bottom: 18px; left: 18px; transform: scaleY(-1); }
+.c-br { bottom: 18px; right: 18px; transform: scale(-1,-1); }
+
+/* jewel dot at each corner */
+.inv-corner .dot {
+  position: absolute;
+  width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--gold-lt);
-  opacity: .75;
+  top: -3px; left: -3px;
+  box-shadow: 0 0 8px rgba(232,184,75,.7);
+  opacity: .85;
 }
-.door-inset::before { top:  -4px; left:  -4px; }
-.door-inset::after  { top:  -4px; right: -4px; }
 
-/* ── TOP PANEL ── */
-.door-top-panel {
-  width: 100%;
+/* ── INVITATION BODY ── */
+.inv-body {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(201,150,42,.3);
-}
-.dtop-arc {
-  width: 65%;
-  height: 2px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, transparent, var(--gold-lt), transparent);
-}
-.dtop-icon {
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
-  color: var(--gold-lt);
-  text-shadow: 0 0 22px rgba(232,184,75,.65);
-  animation: doorGlow 2.8s ease-in-out infinite;
-}
-.flip-h { transform: scaleX(-1); display: inline-block; }
-.dtop-dots { display: flex; gap: 8px; margin-top: 2px; }
-.dtop-dots span {
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: .5;
-  width: 5px; height: 5px;
-}
-.dtop-dots span:nth-child(2) { width: 7px; height: 7px; opacity: .85; }
-
-/* ── HORIZONTAL STRIP ── */
-.door-strip {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,150,42,.45), transparent);
-  margin: 0;
-}
-
-/* ── MAIN PANEL + MEDALLION ── */
-.door-main-panel {
-  flex: 1;
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-.door-medallion {
-  position: relative;
-  width: clamp(80px, 14vw, 140px);
-  height: clamp(80px, 14vw, 140px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.med-ring {
-  position: absolute; inset: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(201,150,42,.5);
-}
-.med-ring.r1 { animation: medSpin 18s linear infinite; }
-.med-ring.r2 { inset: 12%; border-style: dashed; border-color: rgba(201,150,42,.35); animation: medSpin 12s linear infinite reverse; }
-.med-ring.r3 { inset: 24%; border-color: rgba(232,184,75,.6); animation: medSpin 8s linear infinite; }
-.med-icon {
-  font-size: clamp(1.2rem, 2.8vw, 1.9rem);
-  color: var(--gold-lt);
-  text-shadow: 0 0 24px rgba(232,184,75,.65);
-  position: relative; z-index: 1;
-  animation: doorGlow 3s ease-in-out infinite;
-}
-
-/* ── BOTTOM PANEL ── */
-.door-bottom-panel {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 14px;
-  border-top: 1px solid rgba(201,150,42,.3);
-}
-.dbot-icon {
-  font-size: clamp(.85rem, 2vw, 1.2rem);
-  color: rgba(201,150,42,.55);
-}
-
-/* ── KNOB ── */
-.door-knob {
-  position: absolute;
-  top: 50%; transform: translateY(-50%);
-  width: 13px; height: 38px;
-  border-radius: 7px;
-  background: linear-gradient(180deg, var(--gold-lt) 0%, var(--gold) 50%, var(--gold-dk) 100%);
-  box-shadow: 0 3px 12px rgba(0,0,0,.6), inset 0 1px 2px rgba(255,255,255,.35);
-}
-.knob-r { right:  8px; }
-.knob-l { left:   8px; }
-
-/* ── CENTRE CTA ── */
-#doorCta {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  padding: 80px 28px 50px;
   text-align: center;
-  transition: opacity .35s ease, transform .35s ease;
+  gap: 0;
+  transition: opacity .5s ease, transform .5s ease;
 }
-#doorCta.hidden {
+/* inner gold frame */
+.inv-body::before {
+  content: '';
+  position: absolute;
+  inset: clamp(28px, 5vw, 46px);
+  border: 1px solid rgba(201,150,42,.22);
+  pointer-events: none;
+}
+#coverPage.door-open .inv-body {
   opacity: 0;
-  transform: translate(-50%, -50%) scale(.85);
+  transform: scale(.96);
   pointer-events: none;
 }
 
-.cover-btn {
-  display: inline-flex;
+/* ── BISMILLAH ── */
+.inv-bismillah {
+  font-size: clamp(2rem, 6.5vw, 3.6rem);
+  color: var(--gold-lt);
+  text-shadow: 0 0 40px rgba(232,184,75,.65);
+  margin-bottom: 10px;
+  animation: invDown .9s .05s both;
+}
+
+/* ── RULE ── */
+.inv-rule {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 30px;
+  gap: 14px;
+  width: min(380px, 78vw);
+  margin: 6px auto;
+  animation: invUp .8s .15s both;
+}
+.inv-rule span {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,150,42,.55), transparent);
+}
+.inv-rule i { color: var(--gold); font-size: .82rem; }
+.inv-rule-sm { margin: 5px auto; }
+.inv-rule-sm i { font-size: .68rem; color: rgba(201,150,42,.6); }
+
+/* ── BLESS ── */
+.inv-bless {
   font-family: 'Cinzel', serif;
-  font-size: clamp(.72rem, 1.8vw, .88rem);
+  font-size: clamp(.58rem, 1.5vw, .76rem);
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(232,184,75,.6);
+  margin: 4px 0 10px;
+  animation: invUp .8s .22s both;
+}
+
+/* ── NAMES ── */
+.inv-names-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 6px 0 8px;
+  animation: invUp .9s .32s both;
+}
+.inv-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.2rem, 9vw, 4.4rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.05;
+  margin: 0;
+  text-shadow:
+    0 0 50px rgba(201,150,42,.55),
+    0 0 100px rgba(201,150,42,.2),
+    0 3px 14px rgba(0,0,0,.7);
+  letter-spacing: 3px;
+}
+.inv-amp {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.3rem, 4.5vw, 2.4rem);
+  color: var(--gold-lt);
+  font-style: italic;
+  text-shadow: 0 0 28px rgba(232,184,75,.65);
+  line-height: 1;
+  display: block;
+  margin: 4px 0;
+  animation: invUp .9s .4s both;
+}
+
+/* ── SUB TEXT ── */
+.inv-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(.62rem, 1.7vw, .78rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,.45);
+  line-height: 1.9;
+  margin: 6px 0 4px;
+  animation: invUp .8s .48s both;
+}
+
+/* ── DATE & VENUE ── */
+.inv-date {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(.7rem, 2vw, .88rem);
+  color: var(--gold-lt);
   letter-spacing: 2px;
-  font-weight: 600;
-  color: var(--dark);
-  background: linear-gradient(135deg, var(--gold-lt), var(--gold), var(--gold-dk));
+  margin: 6px 0 2px;
+  animation: invUp .8s .55s both;
+}
+.inv-date i { font-size: .72em; opacity: .72; }
+
+.inv-venue {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(.56rem, 1.4vw, .68rem);
+  color: rgba(255,255,255,.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  animation: invUp .8s .6s both;
+}
+
+/* ── TAP TO OPEN ── */
+.tap-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: none;
   border: none;
-  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(201,150,42,.65), 0 6px 20px rgba(0,0,0,.55);
-  transition: transform .25s, box-shadow .25s;
-  white-space: nowrap;
-  animation: btnPulse 2.6s 1.2s ease-in-out infinite;
+  margin-top: 20px;
+  animation: invUp .8s .75s both;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
-.cover-btn:hover {
-  transform: scale(1.07) translateY(-3px);
-  box-shadow: 0 0 50px rgba(201,150,42,.9), 0 10px 28px rgba(0,0,0,.55);
+
+/* ripple rings */
+.tap-ring {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201,150,42,.55);
+  animation: tapPulse 2.4s ease-out infinite;
+  pointer-events: none;
 }
-.cover-btn i { font-size: 1.05em; }
+.tap-ring.r2 { animation-delay: .8s;  border-color: rgba(201,150,42,.38); }
+.tap-ring.r3 { animation-delay: 1.6s; border-color: rgba(201,150,42,.22); }
+
+@keyframes tapPulse {
+  0%   { transform: translateX(-50%) scale(1);   opacity: .9; }
+  100% { transform: translateX(-50%) scale(2.6); opacity: 0;  }
+}
+
+/* circle icon */
+.tap-circle {
+  position: relative;
+  z-index: 1;
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gold-lt) 0%, var(--gold) 55%, var(--gold-dk) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 0 3px rgba(201,150,42,.25),
+    0 0 35px rgba(201,150,42,.65),
+    0 8px 24px rgba(0,0,0,.55);
+  transition: transform .3s, box-shadow .3s;
+}
+.tap-btn:hover .tap-circle,
+.tap-btn:active .tap-circle {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 0 4px rgba(201,150,42,.35),
+    0 0 55px rgba(201,150,42,.9),
+    0 10px 30px rgba(0,0,0,.6);
+}
+.tap-circle i {
+  font-size: 1.5rem;
+  color: #1a0a0f;
+}
+
+/* label */
+.tap-label {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(.58rem, 1.5vw, .72rem);
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(201,150,42,.72);
+  position: relative; z-index: 1;
+}
 
 /* ── KEYFRAMES ── */
-@keyframes doorGlow {
-  0%,100% { text-shadow: 0 0 15px rgba(232,184,75,.4); }
-  50%      { text-shadow: 0 0 35px rgba(232,184,75,.9), 0 0 60px rgba(201,150,42,.4); }
+@keyframes invDown {
+  from { opacity: 0; transform: translateY(-22px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes medSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes btnPulse {
-  0%,100% { box-shadow: 0 0 30px rgba(201,150,42,.65), 0 6px 20px rgba(0,0,0,.55); }
-  50%      { box-shadow: 0 0 55px rgba(201,150,42,1),   0 6px 20px rgba(0,0,0,.55); }
+@keyframes invUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ════════════════════════════════════════

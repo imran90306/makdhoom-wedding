@@ -13,64 +13,53 @@
 </head>
 <body class="cover-active">
 
-  <!-- ══ COVER / DOOR PAGE ══ -->
+  <!-- ══ COVER — WEDDING INVITATION ══ -->
   <div id="coverPage">
 
-    <!-- Left Door -->
-    <div class="door door-left">
-      <div class="door-inset">
-        <div class="door-top-panel">
-          <div class="dtop-arc"></div>
-          <i class="fas fa-star-and-crescent dtop-icon"></i>
-          <div class="dtop-dots"><span></span><span></span><span></span></div>
-        </div>
-        <div class="door-strip"></div>
-        <div class="door-main-panel">
-          <div class="door-medallion">
-            <div class="med-ring r1"></div>
-            <div class="med-ring r2"></div>
-            <div class="med-ring r3"></div>
-            <i class="fas fa-mosque med-icon"></i>
-          </div>
-        </div>
-        <div class="door-strip"></div>
-        <div class="door-bottom-panel">
-          <i class="fas fa-star-and-crescent dbot-icon"></i>
-        </div>
-      </div>
-      <div class="door-knob knob-r"></div>
-    </div>
+    <!-- two halves that slide apart on open -->
+    <div class="inv-panel inv-panel-l"></div>
+    <div class="inv-panel inv-panel-r"></div>
 
-    <!-- Right Door -->
-    <div class="door door-right">
-      <div class="door-inset">
-        <div class="door-top-panel">
-          <div class="dtop-arc"></div>
-          <i class="fas fa-star-and-crescent dtop-icon flip-h"></i>
-          <div class="dtop-dots"><span></span><span></span><span></span></div>
-        </div>
-        <div class="door-strip"></div>
-        <div class="door-main-panel">
-          <div class="door-medallion">
-            <div class="med-ring r1"></div>
-            <div class="med-ring r2"></div>
-            <div class="med-ring r3"></div>
-            <i class="fas fa-mosque med-icon"></i>
-          </div>
-        </div>
-        <div class="door-strip"></div>
-        <div class="door-bottom-panel">
-          <i class="fas fa-star-and-crescent dbot-icon flip-h"></i>
-        </div>
-      </div>
-      <div class="door-knob knob-l"></div>
-    </div>
+    <!-- corner ornaments -->
+    <div class="inv-corner c-tl"><span class="dot"></span></div>
+    <div class="inv-corner c-tr"><span class="dot"></span></div>
+    <div class="inv-corner c-bl"><span class="dot"></span></div>
+    <div class="inv-corner c-br"><span class="dot"></span></div>
 
-    <!-- Centre button over the seam -->
-    <div id="doorCta">
-      <button id="viewInvitationBtn" class="cover-btn">
-        <i class="fas fa-envelope-open-text"></i>
-        <span>View Invitation</span>
+    <!-- invitation body -->
+    <div class="inv-body">
+      <div class="inv-bismillah">&#xFDFD;</div>
+
+      <div class="inv-rule">
+        <span></span><i class="fas fa-star-and-crescent"></i><span></span>
+      </div>
+
+      <p class="inv-bless">With the Blessings of Allah</p>
+
+      <div class="inv-names-wrap">
+        <h1 class="inv-name">Makhdoom</h1>
+        <span class="inv-amp">&amp;</span>
+        <h1 class="inv-name">Shameena</h1>
+      </div>
+
+      <p class="inv-sub">Together with their families<br>joyfully invite you to their Nikah</p>
+
+      <div class="inv-rule inv-rule-sm">
+        <span></span><i class="fas fa-heart"></i><span></span>
+      </div>
+
+      <p class="inv-date"><i class="fas fa-star-and-crescent"></i>&nbsp; December 25, 2026 &nbsp;<i class="fas fa-star-and-crescent"></i></p>
+      <p class="inv-venue">Grand Convention Hall, Nellore</p>
+
+      <!-- tap to open -->
+      <button id="viewInvitationBtn" class="tap-btn">
+        <span class="tap-ring r1"></span>
+        <span class="tap-ring r2"></span>
+        <span class="tap-ring r3"></span>
+        <span class="tap-circle">
+          <i class="fas fa-envelope-open-text"></i>
+        </span>
+        <span class="tap-label">Tap to Open</span>
       </button>
     </div>
 

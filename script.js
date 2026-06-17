@@ -3,22 +3,20 @@ if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
 /* ════════════════════════════════════════
-   COVER DOOR — open on "View Invitation"
+   COVER — tap to open invitation
 ════════════════════════════════════════ */
 document.addEventListener("DOMContentLoaded", () => {
   const coverPage = document.getElementById("coverPage");
   const viewBtn   = document.getElementById("viewInvitationBtn");
-  const doorCta   = document.getElementById("doorCta");
   if (!coverPage || !viewBtn) return;
 
   viewBtn.addEventListener("click", () => {
-    if (doorCta) doorCta.classList.add("hidden");
     coverPage.classList.add("door-open");
     setTimeout(() => {
       coverPage.remove();
       document.body.classList.remove("cover-active");
       window.scrollTo(0, 0);
-    }, 1700);
+    }, 1600);
   });
 });
 
